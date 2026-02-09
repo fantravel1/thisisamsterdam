@@ -1,2 +1,0 @@
-# thisisamsterdam
-Full Guide
