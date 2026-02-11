@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Coming Soon | ThisIsAmsterdam</title>
+    <meta name="description" content="This section of ThisIsAmsterdam is coming soon. We're building the most comprehensive guide to Amsterdam's neighborhoods, bike culture, canals, and urban design.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://thisisamsterdam.com/coming-soon.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127913;</text></svg>">
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --color-bg: #0a1628;
+            --color-text: #f8f4ef;
+            --color-gold: #c8a951;
+            --color-subtle: rgba(248, 244, 239, 0.6);
+            --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html { height: 100%; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .coming-soon-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .coming-soon-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            filter: saturate(0.6);
+        }
+
+        .coming-soon-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(10, 22, 40, 0.3) 0%,
+                rgba(10, 22, 40, 0.7) 50%,
+                rgba(10, 22, 40, 0.95) 100%
+            );
+            z-index: 1;
+        }
+
+        .coming-soon-content {
+            position: relative;
+            z-index: 2;
+            max-width: 640px;
+            width: 100%;
+        }
+
+        .cs-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--color-text);
+            margin-bottom: 3rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .cs-logo:hover { opacity: 0.8; }
+
+        .cs-logo-mark {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.1rem;
+            background: var(--color-gold);
+            color: var(--color-bg);
+            width: 2.5rem;
+            height: 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            letter-spacing: -0.02em;
+        }
+
+        .cs-logo-text {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .cs-logo-text strong { font-weight: 700; }
+
+        .cs-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(200, 169, 81, 0.3);
+            border-radius: 100px;
+        }
+
+        .cs-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cs-title span {
+            display: block;
+            color: var(--color-gold);
+            font-style: italic;
+            font-weight: 400;
+            font-size: 0.85em;
+        }
+
+        .cs-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-subtle);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cs-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 440px;
+            margin: 0 auto 1rem;
+        }
+
+        .cs-form input {
+            flex: 1;
+            padding: 0.875rem 1.25rem;
+            border: 1px solid rgba(248, 244, 239, 0.2);
+            border-radius: 8px;
+            background: rgba(248, 244, 239, 0.08);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .cs-form input::placeholder { color: rgba(248, 244, 239, 0.4); }
+        .cs-form input:focus {
+            border-color: var(--color-gold);
+            background: rgba(248, 244, 239, 0.12);
+        }
+
+        .cs-form button {
+            padding: 0.875rem 1.75rem;
+            background: var(--color-gold);
+            color: var(--color-bg);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .cs-form button:hover {
+            background: #d4b65e;
+            transform: translateY(-1px);
+        }
+
+        .cs-note {
+            font-size: 0.8rem;
+            color: rgba(248, 244, 239, 0.35);
+            margin-bottom: 3rem;
+        }
+
+        .cs-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .cs-back:hover { opacity: 0.8; }
+
+        .cs-back svg {
+            transition: transform 0.3s ease;
+        }
+
+        .cs-back:hover svg {
+            transform: translateX(-3px);
+        }
+
+        .cs-decoration {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0.3;
+        }
+
+        .cs-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--color-text);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.5rem; }
+            .cs-form {
+                flex-direction: column;
+            }
+            .cs-form button {
+                width: 100%;
+            }
+            .cs-logo { margin-bottom: 2rem; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .coming-soon-content > * {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .coming-soon-content > :nth-child(1) { animation-delay: 0.1s; }
+        .coming-soon-content > :nth-child(2) { animation-delay: 0.2s; }
+        .coming-soon-content > :nth-child(3) { animation-delay: 0.3s; }
+        .coming-soon-content > :nth-child(4) { animation-delay: 0.4s; }
+        .coming-soon-content > :nth-child(5) { animation-delay: 0.5s; }
+        .coming-soon-content > :nth-child(6) { animation-delay: 0.6s; }
+        .coming-soon-content > :nth-child(7) { animation-delay: 0.7s; }
+        .coming-soon-content > :nth-child(8) { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+    <div class="coming-soon-bg">
+        <img src="https://images.unsplash.com/photo-1534351590666-13e3e96b5017?auto=format&fit=crop&w=1920&h=1080&q=80" alt="" role="presentation" width="1920" height="1080">
+    </div>
+    <div class="coming-soon-overlay"></div>
+
+    <div class="coming-soon-content">
+        <a href="/" class="cs-logo">
+            <span class="cs-logo-mark">TIA</span>
+            <span class="cs-logo-text">ThisIs<strong>Amsterdam</strong></span>
+        </a>
+
+        <div class="cs-label">Coming Soon</div>
+
+        <h1 class="cs-title">
+            Something Beautiful
+            <span>Is Being Built</span>
+        </h1>
+
+        <p class="cs-text">We're crafting in-depth guides to Amsterdam's neighborhoods, bike culture, canals, and the systems that make this city extraordinary. Get notified when we launch.</p>
+
+        <form class="cs-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color: var(--color-gold); padding: 1rem;\'>Thank you! We\'ll be in touch.</p>';">
+            <label for="cs-email" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Email address</label>
+            <input type="email" id="cs-email" name="email" placeholder="your@email.com" required autocomplete="email">
+            <button type="submit">Notify Me</button>
+        </form>
+
+        <p class="cs-note">No spam. Just Amsterdam, done right.</p>
+
+        <a href="/" class="cs-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Homepage
+        </a>
+    </div>
+
+    <div class="cs-decoration" aria-hidden="true">
+        <div class="cs-dot"></div>
+        <div class="cs-dot"></div>
+        <div class="cs-dot"></div>
+    </div>
+</body>
+</html>
